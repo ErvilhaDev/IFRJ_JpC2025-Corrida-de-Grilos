@@ -1,10 +1,17 @@
 package pckg;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Semaphore;
+
 public class Grilo extends Thread {
     private int nome;
     private int deslocamento = 0;
     private int pulos = 0;
     private int linhadechegada = 100;
+    
+    private static Semaphore semaforo = new Semaphore(1);
+    private static List<Integer> ordemDeChegada = new ArrayList<>();
 
     public Grilo(int nome) {
         this.nome = nome;
@@ -26,6 +33,8 @@ public class Grilo extends Thread {
         } catch (InterruptedException e) {
             System.out.println("Erro");
         }
+        
+        ordemDeChegada.add(nome);
     }
 
 	public int getNameGrilo() {
@@ -35,4 +44,8 @@ public class Grilo extends Thread {
 	public int getPulos() {
 		return pulos;
 	}
+	
+	public static List<Integer> getOrdemDeChegada() {
+        return ordemDeChegada;
+    }
 }

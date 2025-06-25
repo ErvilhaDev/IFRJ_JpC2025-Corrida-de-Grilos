@@ -29,5 +29,11 @@ public class Main {
         for (Grilo grilo : grilos) {
             System.out.printf("Grilo %d deu %d pulos\n", grilo.getNameGrilo(), grilo.getPulos());
         }
+        
+        System.out.println("\nOrdem de chegada:");
+        int ordem = 1;
+        for (int id : Grilo.getOrdemDeChegada()) {
+            System.out.printf("%dº lugar: Grilo %d\n", ordem++, id);
+        }
     }
 }
