@@ -26,7 +26,7 @@ public class Grilo extends Thread {
                 pulos++;
                 System.out.printf("Grilo %d pulou %d centímetros (total: %d centímetros)\n", nome, pulo, deslocamento);
                 
-                Thread.sleep(200);
+                Thread.sleep(300);
             }
             
             System.out.printf("Grilo %d chegou à linha de chegada em %d pulos\n", nome, pulos);
